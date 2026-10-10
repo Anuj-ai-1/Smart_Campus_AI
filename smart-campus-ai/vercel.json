@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "smart-campus-backend": {
+      "root": "smart-campus-backend",
+      "framework": "fastapi"
+    },
+    "smart-campus-frontend": {
+      "root": "smart-campus-frontend",
+      "framework": "vite"
+    }
+  },
+  "rewrites": []
+}
