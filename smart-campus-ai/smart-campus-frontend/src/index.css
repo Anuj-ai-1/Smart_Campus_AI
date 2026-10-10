@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-color: #f7eee7;
+    color: #17171c;
+    letter-spacing: -0.01em;
+  }
+
+  code, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* 🍱 Bento Box Architecture Styles */
+  .bento-card {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem; /* rounded-2xl */
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bento-card-interactive {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bento-card-interactive:hover {
+    background: #141b2a;
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .bento-card-soft {
+    background: #0e131d;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 1rem;
+  }
+
+  /* Retain glass-card as a clean bento alias for full backward-compat */
+  .glass-card {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    background: #141b2a;
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .glass-panel {
+    background: rgba(15, 21, 32, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-input {
+    background: #0c1018;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    color: #e2e8f0;
+    transition: all 0.15s ease;
+  }
+
+  .glass-input:focus {
+    background: #111724;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+    outline: none;
+  }
+
+  .glass-button-primary {
+    background: #4f46e5;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.15s ease;
+  }
+
+  .glass-button-primary:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+  }
+
+  .glass-button-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.75rem;
+    color: #94a3b8;
+    transition: all 0.15s ease;
+  }
+
+  .glass-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.14);
+    color: #f8fafc;
+  }
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🫧 Slow Soothing Bubble Floating Animations */
+@keyframes bubbleSlow1 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-8px) translateX(3px) scale(1.015);
+  }
+  66% {
+    transform: translateY(4px) translateX(-2px) scale(0.995);
+  }
+}
+
+@keyframes bubbleSlow2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(7px) translateX(-4px) scale(0.99);
+  }
+  66% {
+    transform: translateY(-9px) translateX(3px) scale(1.02);
+  }
+}
+
+@keyframes bubbleSlow3 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  40% {
+    transform: translateY(-11px) translateX(-3px) scale(1.02);
+  }
+  75% {
+    transform: translateY(5px) translateX(4px) scale(0.985);
+  }
+}
+
+@keyframes bubbleCenter {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.008);
+  }
+}
+
+.animate-bubble-slow-1 {
+  animation: bubbleSlow1 7s ease-in-out infinite;
+}
+
+.animate-bubble-slow-2 {
+  animation: bubbleSlow2 8.5s ease-in-out infinite;
+}
+
+.animate-bubble-slow-3 {
+  animation: bubbleSlow3 6.5s ease-in-out infinite;
+}
+
+.animate-bubble-center {
+  animation: bubbleCenter 9s ease-in-out infinite;
+}
+
+/* 🎬 Cinematic Staggered Entrance Animations */
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-stagger-1 { animation: slide-up-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.animate-stagger-2 { animation: slide-up-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.10s both; }
+.animate-stagger-3 { animation: slide-up-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+.animate-stagger-4 { animation: slide-up-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
+.animate-stagger-5 { animation: slide-up-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+
+/* 🌟 Cinematic Glows */
+.ambient-glow-green {
+  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25), inset 0 0 20px -5px rgba(16, 185, 129, 0.1);
+}
+.ambient-glow-indigo {
+  box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.25), inset 0 0 20px -5px rgba(99, 102, 241, 0.1);
+}
+.ambient-glow-rose {
+  box-shadow: 0 0 30px -5px rgba(244, 63, 94, 0.25), inset 0 0 20px -5px rgba(244, 63, 94, 0.1);
+}
